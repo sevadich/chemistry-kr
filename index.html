@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Полная подготовка к КР по Химии: Углеводороды</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #131b2e;
+      --card-border: #23314e;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --alkane: #10b981;
+      --alkane-bg: rgba(16, 185, 129, 0.12);
+      --alkene: #0284c7;
+      --alkene-bg: rgba(2, 132, 199, 0.14);
+      --diene: #8b5cf6;
+      --diene-bg: rgba(139, 92, 246, 0.14);
+      --alkyne: #f59e0b;
+      --alkyne-bg: rgba(245, 158, 11, 0.14);
+      --danger: #ef4444;
+      --danger-bg: rgba(239, 68, 68, 0.14);
+      --accent: #38bdf8;
+      --code-bg: #060911;
+      --gold: #fbbf24;
+      --simple-bg: rgba(56, 189, 248, 0.08);
+      --simple-border: #0284c7;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --code-bg: #f1f5f9;
+      --alkane-bg: rgba(16, 185, 129, 0.15);
+      --alkene-bg: rgba(2, 132, 199, 0.15);
+      --diene-bg: rgba(139, 92, 246, 0.15);
+      --alkyne-bg: rgba(245, 158, 11, 0.15);
+      --danger-bg: rgba(239, 68, 68, 0.15);
+      --simple-bg: rgba(2, 132, 199, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 90px;
+      transition: background-color 0.25s, color 0.25s;
+    }
+
+    /* Навигация */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 13, 22, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 12px 24px;
+    }
+    [data-theme="light"] header {
+      background: rgba(248, 250, 252, 0.92);
+    }
+
+    .header-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 5px 8px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: var(--card-bg);
+    }
+
+    .header-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn-toggle, .btn-print {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.2s;
+    }
+
+    .btn-toggle:hover, .btn-print:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Контейнер */
+    .container {
+      max-width: 1240px;
+      margin: 24px auto;
+      padding: 0 20px;
+    }
+
+    /* Баннер героя */
+    .hero {
+      text-align: center;
+      padding: 36px 20px;
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.1) 0%, transparent 100%);
+      border-radius: 20px;
+      border: 1px solid var(--card-border);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 850px;
+      margin: 0 auto 18px;
+    }
+
+    .badge-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-alkane { background: var(--alkane-bg); color: var(--alkane); border: 1px solid var(--alkane); }
+    .badge-alkene { background: var(--alkene-bg); color: var(--alkene); border: 1px solid var(--alkene); }
+    .badge-diene { background: var(--diene-bg); color: var(--diene); border: 1px solid var(--diene); }
+    .badge-alkyne { background: var(--alkyne-bg); color: var(--alkyne); border: 1px solid var(--alkyne); }
+    .badge-gold { background: rgba(251, 191, 36, 0.15); color: var(--gold); border: 1px solid var(--gold); }
+    .badge-cyan { background: rgba(56, 189, 248, 0.15); color: var(--accent); border: 1px solid var(--accent); }
+
+    /* Поиск */
+    .search-box {
+      margin-bottom: 26px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 13px 20px 13px 48px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 0.98rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Карточки разделов */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 26px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+
+    .card-alkane::before { background: var(--alkane); }
+    .card-alkene::before { background: var(--alkene); }
+    .card-diene::before { background: var(--diene); }
+    .card-alkyne::before { background: var(--alkyne); }
+    .card-danger::before { background: var(--danger); }
+    .card-gold::before { background: var(--gold); }
+    .card-accent::before { background: var(--accent); }
+    .card-simple::before { background: #38bdf8; }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Сетки */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .info-pane {
+      background: var(--code-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .info-pane h4 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    /* БЛОКИ «НА ПАЛЬЦАХ» */
+    .simple-expl-box {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-left: 5px solid var(--accent);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 18px 0;
+    }
+
+    .simple-expl-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .simple-expl-body {
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .analogy-tag {
+      display: inline-block;
+      background: rgba(251, 191, 36, 0.2);
+      color: #fbbf24;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-right: 6px;
+    }
+
+    /* Уравнения и формулы */
+    .reaction-block {
+      background: var(--code-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      position: relative;
+    }
+
+    .reaction-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .reaction-formula {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      padding: 6px 0;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .reaction-note {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 6px;
+    }
+
+    .tag-rule {
+      font-size: 0.75rem;
+      background: rgba(245, 158, 11, 0.18);
+      color: #fbbf24;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .tag-danger {
+      font-size: 0.75rem;
+      background: rgba(239, 68, 68, 0.2);
+      color: #f87171;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .tag-success {
+      font-size: 0.75rem;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    /* Структурные формулы (ASCII / Clean text) */
+    .struct-box {
+      font-family: "Courier New", monospace;
+      background: #000000;
+      color: #38bdf8;
+      padding: 12px;
+      border-radius: 8px;
+      line-height: 1.25;
+      font-size: 0.95rem;
+      margin: 10px 0;
+      overflow-x: auto;
+      border: 1px solid #1e293b;
+    }
+
+    [data-theme="light"] .struct-box {
+      background: #0f172a;
+      color: #7dd3fc;
+    }
+
+    /* Сравнительная таблица */
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    th {
+      background: var(--code-bg);
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.5px;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Красная зона / Ловушки */
+    .trap-card {
+      background: var(--danger-bg);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .trap-title {
+      color: #ef4444;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .trap-wrong {
+      color: #f87171;
+      text-decoration: line-through;
+      font-weight: 600;
+    }
+
+    .trap-correct {
+      color: #34d399;
+      font-weight: 700;
+    }
+
+    /* Цепочки превращений */
+    .chain-box {
+      background: var(--code-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .chain-scheme {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--gold);
+      padding: 10px 0;
+      letter-spacing: 0.5px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .chain-btn {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      margin-top: 8px;
+    }
+
+    .chain-btn:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .chain-solution {
+      display: none;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--card-border);
+      font-size: 0.95rem;
+    }
+
+    /* Флеш-карточки (Flip Cards) */
+    .flashcard {
+      perspective: 1000px;
+      height: 180px;
+      cursor: pointer;
+    }
+
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.5s;
+      transform-style: preserve-3d;
+      border-radius: 12px;
+    }
+
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-front, .flashcard-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--card-border);
+    }
+
+    .flashcard-front {
+      background: var(--code-bg);
+      color: var(--text);
+    }
+
+    .flashcard-back {
+      background: #1e293b;
+      color: #38bdf8;
+      transform: rotateY(180deg);
+      border-color: var(--accent);
+    }
+
+    [data-theme="light"] .flashcard-back {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .flashcard-hint {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* Интерактивный тренажер (Квиз) */
+    .quiz-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    .quiz-question {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 9px;
+      margin-bottom: 12px;
+    }
+
+    .quiz-btn {
+      text-align: left;
+      background: var(--code-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.92rem;
+      transition: all 0.2s;
+    }
+
+    .quiz-btn:hover {
+      border-color: var(--accent);
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    .quiz-btn.correct {
+      background: rgba(16, 185, 129, 0.25) !important;
+      border-color: var(--alkane) !important;
+      color: #34d399 !important;
+      font-weight: bold;
+    }
+
+    .quiz-btn.wrong {
+      background: rgba(239, 68, 68, 0.25) !important;
+      border-color: var(--danger) !important;
+      color: #f87171 !important;
+    }
+
+    .quiz-explanation {
+      display: none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: var(--code-bg);
+      border-left: 4px solid var(--accent);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+
+    .quiz-score-box {
+      text-align: center;
+      padding: 24px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(139, 92, 246, 0.1));
+      border-radius: 14px;
+      border: 1px solid var(--card-border);
+      margin-top: 24px;
+    }
+
+    /* Экспресс-шпора на 5 минут */
+    .mini-cheat {
+      background: #020617;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    [data-theme="light"] .mini-cheat {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    .mini-cheat ul {
+      padding-left: 20px;
+    }
+    .mini-cheat li {
+      margin-bottom: 8px;
+    }
+
+    /* Печать */
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+      }
+      header, .search-box, .btn-toggle, .btn-print, .flashcard-hint, .chain-btn, .quiz-card, .quiz-score-box {
+        display: none !important;
+      }
+      .section-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+      }
+      .info-pane, .reaction-block, .struct-box, .chain-box, .simple-expl-box {
+        background: #f8fafc;
+        color: #000;
+        border: 1px solid #ddd;
+      }
+      .chain-solution {
+        display: block !important;
+      }
+      .reaction-formula {
+        color: #000;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Шапка -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span>⚗️</span> ХИМИЯ 10: УГЛЕВОДОРОДЫ
+      </div>
+      <ul class="nav-links">
+        <li><a href="#simple-guide">💡 На пальцах</a></li>
+        <li><a href="#solver">🎯 Алгоритм цепочек</a></li>
+        <li><a href="#chains">Цепочки (К/Р)</a></li>
+        <li><a href="#lab">3 пробирки</a></li>
+        <li><a href="#flashcards">Флешки</a></li>
+        <li><a href="#alkanes">Алканы</a></li>
+        <li><a href="#alkenes">Алкены</a></li>
+        <li><a href="#dienes">Диены</a></li>
+        <li><a href="#alkynes">Алкины</a></li>
+        <li><a href="#traps">Ловушки</a></li>
+        <li><a href="#quiz">Тренажер</a></li>
+      </ul>
+      <div class="header-controls">
+        <button class="btn-toggle" onclick="toggleTheme()" title="Сменить тему">🌓 Тема</button>
+        <button class="btn-print" onclick="window.print()" title="Распечатать шпаргалку">🖨️ Печать</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>Интерактивный супер-конспект к К/Р</h1>
+      <p>Всё разложено по полочкам: от простых житейских аналогий «на пальцах» до строгих формул, генетических цепочек и ловушек учителя. Вы поймёте логику каждой реакции и сможете решить любое задание!</p>
+      <div class="badge-bar">
+        <span class="badge badge-cyan">💡 Объяснения на пальцах</span>
+        <span class="badge badge-alkane">Алканы C<sub>n</sub>H<sub>2n+2</sub></span>
+        <span class="badge badge-alkene">Алкены C<sub>n</sub>H<sub>2n</sub></span>
+        <span class="badge badge-diene">Диены C<sub>n</sub>H<sub>2n-2</sub></span>
+        <span class="badge badge-alkyne">Алкины C<sub>n</sub>H<sub>2n-2</sub></span>
+        <span class="badge badge-gold">🔥 Топ-цепочки К/Р</span>
+      </div>
+    </div>
+
+    <!-- Поиск -->
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Живой поиск (Марковников, Зайцев, крекинг, 1,4-присоединение, ацетилен, Вюрц, пробирка, первичный)..." oninput="filterContent()">
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- НОВЫЙ БЛОК: ХИМИЯ НА ПАЛЬЦАХ (ПРОСТЫМИ СЛОВАМИ) -->
+    <!-- ======================================================== -->
+    <section id="simple-guide" class="section-card card-simple">
+      <div class="section-header">
+        <div class="section-title">
+          <span style="color:var(--accent)">💡</span> Химия «на пальцах»: Как понять суть главных правил без зубрежки
+        </div>
+        <span class="tag-success">ПРОСТО О СЛОЖНОМ</span>
+      </div>
+      <p style="color:var(--text-muted); margin-bottom: 16px;">
+        Если вы поймете <em>почему</em> молекулы ведут себя именно так, вам не придется заучивать сотни реакций — вы сами предскажете продукт за 5 секунд!
+      </p>
+
+      <!-- 1. Первичный, вторичный, третичный -->
+      <div class="simple-expl-box">
+        <div class="simple-expl-title">
+          <span class="analogy-tag">Базовое понятие</span> 1. Что такое первичный (1°), вторичный (2°) и третичный (3°) углерод?
+        </div>
+        <div class="simple-expl-body">
+          <p>Представьте, что каждый атом углерода — это человек, у которого 4 руки. Одной или несколькими руками он держится за <strong>соседние углероды</strong>, а свободными руками держит атомы водорода (H):</p>
+          <ul style="padding-left: 20px; margin: 8px 0;">
+            <li><strong>Первичный (1°):</strong> держится за руку <em>только с 1 углеродом</em> (всегда стоит на краю молекулы, это группа <code>—CH<sub>3</sub></code>).</li>
+            <li><strong>Вторичный (2°):</strong> держится за руки с <em>двумя углеродами</em> (стоит внутри обычной цепочки, это группа <code>—CH<sub>2</sub>—</code>).</li>
+            <li><strong>Третичный (3°):</strong> держится за руки сразу с <em>тремя углеродами</em> (это место «развилки / тройника», группа <code>&gt;CH—</code>).</li>
+            <li><strong>Четвертичный (4°):</strong> держит 4 углерода (у него вообще нет водородов, <code>&gt;C&lt;</code>).</li>
+          </ul>
+          <p><strong>Зачем это знать?</strong> В алканах водород легче всего оторвать у <strong>третичного углерода</strong> (он перегружен соседними группами, связь C—H там самая слабая). Поэтому при хлорировании пропана хлор встает <strong>в центр ко 2-му углероду</strong> (он вторичный), а не по краям!</p>
+        </div>
+      </div>
+
+      <!-- 2. Марковников -->
+      <div class="simple-expl-box">
+        <div class="simple-expl-title">
+          <span class="analogy-tag">Аналогия: «Богатый богатеет»</span> 2. Правило Марковникова (+HCl, +HBr, +H<sub>2</sub>O к алкенам)
+        </div>
+        <div class="simple-expl-body">
+          <p>Посмотрим на несимметричный алкен, например пропен: <code>CH<sub>3</sub>—CH=CH<sub>2</sub></code>. При двойной связи стоят два разных углерода: один бедный (у него только 1 водород <code>—CH=</code>), а второй богатый (у него 2 водорода <code>=CH<sub>2</sub></code>).</p>
+          <p>К ним подлетает молекула <code>H—Cl</code> (где H заряжен положительно &delta;+, а Cl — отрицательно &delta;-):</p>
+          <p style="background:var(--code-bg); padding:10px; border-radius:8px; margin:8px 0; font-family:monospace;">
+            Водород H<sup>+</sup> летит туда, где водородов И ТАК БОЛЬШЕ (к CH<sub>2</sub>) &rarr; получается —CH<sub>3</sub>!<br>
+            А хлору Cl<sup>-</sup> ничего не остается, как сесть на оставшийся бедный углерод (к CH) &rarr; получается —CH(Cl)—!
+          </p>
+          <p><strong>Результат:</strong> Всегда образуется <strong>2-хлорпропан</strong> (хлор садится в середину), а не 1-хлорпропан! То же самое с водой <code>H—OH</code>: водород идет к краю, а группа <code>—OH</code> — в середину (получается вторичный спирт пропанол-2).</p>
+        </div>
+      </div>
+
+      <!-- 3. Зайцев -->
+      <div class="simple-expl-box">
+        <div class="simple-expl-title">
+          <span class="analogy-tag">Аналогия: «Бедный беднеет»</span> 3. Правило Зайцева (Отщепление -H<sub>2</sub>O или -HCl)
+        </div>
+        <div class="simple-expl-body">
+          <p>Это правило — прямая противоположность Марковникову. Когда мы <strong>отбираем</strong> что-то у молекулы (нагреваем спирт с серной кислотой H<sub>2</sub>SO<sub>4</sub>, чтобы оторвать воду):</p>
+          <p>Группа <code>—OH</code> уходит со своего углерода, а чтобы замкнуть двойную связь, ей нужен атом водорода с соседнего углерода. С какого соседа оторвать H?</p>
+          <p><strong>Правило Зайцева гласит:</strong> Водород отбирают у того соседа, у которого водородов <strong>МЕНЬШЕ</strong> (у наименее гидрогенизированного)!</p>
+          <p><em>Пример с бутанолом-2:</em> <code>CH<sub>3</sub>—CH(OH)—CH<sub>2</sub>—CH<sub>3</sub></code>.<br>
+          Слева от OH стоит группа <code>CH<sub>3</sub></code> (3 водорода), а справа — <code>CH<sub>2</sub></code> (2 водорода). У кого меньше? Справа у CH<sub>2</sub>! Значит водород забираем справа, и двойная связь встает <strong>в центр</strong>:</p>
+          <div style="font-family:monospace; color:var(--accent); font-weight:bold; margin-top:6px;">
+            CH<sub>3</sub>—CH=CH—CH<sub>3</sub> (бутен-2) + H<sub>2</sub>O. (Бутен-1 практически не образуется!)
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 1,4-сопряжение в диенах -->
+      <div class="simple-expl-box">
+        <div class="simple-expl-title">
+          <span class="analogy-tag">Физическая суть</span> 4. Почему в сопряженных диенах двойная связь «прыгает» в центр?
+        </div>
+        <div class="simple-expl-body">
+          <p>В бутадиене-1,3 (<code>CH<sub>2</sub>=CH—CH=CH<sub>2</sub></code>) 4 атома углерода образуют единую систему перекрывающихся электронных облаков (сопряжение). Пронумеруем их: <strong>C1 = C2 — C3 = C4</strong>.</p>
+          <p>Когда при повышенной температуре молекула брома Br<sub>2</sub> атакует диен, один атом Br садится на C1, а второй — на C4 (по краям). При этом:</p>
+          <ul style="padding-left:20px; margin: 8px 0;">
+            <li>Двойная связь C1=C2 раскрылась (1 электрон ушел на связь с первым Br, а 1 остался на C2).</li>
+            <li>Двойная связь C3=C4 раскрылась (1 электрон ушел на связь со вторым Br, а 1 остался на C3).</li>
+            <li>Одинокие свободные электроны у C2 и C3 тянутся друг к другу и образуют <strong>НОВУЮ двойную связь ровно посередине: между C2 и C3!</strong></li>
+          </ul>
+          <p>Получается: <strong>Br—CH<sub>2</sub>—CH=CH—CH<sub>2</sub>—Br (1,4-дибромбутен-2)</strong>. Двойная связь просто перещелкнулась в центр!</p>
+        </div>
+      </div>
+
+      <!-- 5. Как не попасться на изгибы цепи -->
+      <div class="simple-expl-box">
+        <div class="simple-expl-title">
+          <span class="analogy-tag">Геометрия</span> 5. Змея в траве: Почему изгиб — это НЕ новый изомер!
+        </div>
+        <div class="simple-expl-body">
+          <p>Учителя обожают на контрольных рисовать молекулы «буквой Г» или «загогулиной», чтобы запутать ученика:</p>
+          <div class="struct-box">
+CH3 - CH2 - CH2
+              \
+              CH2 - CH3
+          </div>
+          <p>Кажется, что это разветвленная молекула? <strong>НЕТ! Это обычный линейный пентан (5 атомов C подряд)!</strong></p>
+          <p>Связи C—C могут свободно вращаться. Представьте веревку: если вы бросите ее на стол ровно — это веревка. Если загнете буквой «Г» — это всё та же веревка! <strong>Правило:</strong> ведите пальцем по углеродной цепочке, не отрывая руки и не возвращаясь назад. Длина самого длинного непрерывного пути пальца — это и есть ваша <strong>главная цепь</strong>!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- НОВЫЙ БЛОК: СЕКРЕТНЫЙ АЛГОРИТМ РЕШЕНИЯ ЛЮБОЙ ЦЕПОЧКИ -->
+    <!-- ======================================================== -->
+    <section id="solver" class="section-card card-gold">
+      <div class="section-header">
+        <div class="section-title">
+          <span style="color:var(--gold)">🎯</span> Алгоритм: Как решить ЛЮБУЮ цепочку превращений на К/Р
+        </div>
+        <span class="tag-rule">ШПАРГАЛКА ПО ПЕРЕХОДАМ</span>
+      </div>
+      <p style="color:var(--text-muted); margin-bottom: 16px;">
+        Когда вам дали стрелочку <code>Вещество А &rarr; Вещество Б</code>, задайте себе всего 3 вопроса:
+      </p>
+
+      <div class="grid-3">
+        <div class="info-pane">
+          <h4 style="color:var(--gold)">1. Число углеродов изменилось?</h4>
+          <p>• <strong>Удвоилось</strong> (C<sub>2</sub> &rarr; C<sub>4</sub>)? &rarr; Это <strong>РЕАКЦИЯ ВЮРЦА</strong> (+ 2Na к галогеналкану)!</p>
+          <p>• <strong>Утроилось</strong> (C<sub>2</sub> &rarr; C<sub>6</sub>)? &rarr; <strong>Тримеризация ацетилена в бензол</strong> (Зелинский, C<sub>акт</sub>, 500°C)!</p>
+          <p>• <strong>Уменьшилось</strong>? &rarr; <strong>Крекинг</strong> высших алканов (t°) или окисление с деструкцией.</p>
+        </div>
+        <div class="info-pane">
+          <h4 style="color:var(--accent)">2. Связь стала более кратной?</h4>
+          <p>• Была одинарная &rarr; стала двойная (Алкан &rarr; Алкен)? &rarr; <strong>Дегидрирование</strong> (-H<sub>2</sub>, Ni, t°) или отщепление H<sub>2</sub>O от спирта (H<sub>2</sub>SO<sub>4</sub>, t&gt;140°).</p>
+          <p>• Была двойная &rarr; стала тройная? &rarr; Отщепление галогеноводорода спиртовым раствором щелочи (KOH спирт.).</p>
+        </div>
+        <div class="info-pane">
+          <h4 style="color:var(--alkane)">3. Связь стала одинарной?</h4>
+          <p>• Была кратная &rarr; стала одинарная? &rarr; <strong>РЕАКЦИЯ ПРИСОЕДИНЕНИЯ</strong>!</p>
+          <p>• Нужно просто добавить: <strong>+H<sub>2</sub></strong> (гидрирование), <strong>+Cl<sub>2</sub>/Br<sub>2</sub></strong> (галогенирование), <strong>+HCl</strong> (гидрогалогенирование) или <strong>+H<sub>2</sub>O</strong> (гидратация).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- РАЗДЕЛ: ЭКСПРЕСС-ШПОРА "ЗА 5 МИНУТ ДО ЗВОНКА" -->
+    <!-- ======================================================== -->
+    <section class="section-card card-gold">
+      <div class="section-header">
+        <div class="section-title">
+          <span style="color:var(--gold)">⚡</span> Экспресс-памятка «За 5 минут до входа в класс»
+        </div>
+        <span class="tag-rule">ПРОЧИТАТЬ ПЕРЕД САМОЙ К/Р</span>
+      </div>
+      <div class="mini-cheat">
+        <ul>
+          <li><strong>Главная цепь:</strong> ищи САМУЮ длинную цепь! <code>CH<sub>3</sub>—CH<sub>2</sub>—CH(C<sub>2</sub>H<sub>5</sub>)—CH<sub>3</sub></code> — это <strong>3-метилпентан</strong>, а не «2-этилбутан»!</li>
+          <li><strong>Нумерация цепи:</strong> в алканах — от радикала. В алкенах/диенах/алкинах — <strong>СТРОГО от двойной/тройной связи</strong> (кратная связь всегда главнее радикала!).</li>
+          <li><strong>Правило Марковникова (+HCl, +H<sub>2</sub>O):</strong> водород идет туда, где водородов <em>больше</em> («богатый становится богаче»). Галоген или OH — туда, где водородов <em>меньше</em>.</li>
+          <li><strong>Правило Зайцева (отщепление -H<sub>2</sub>O или -HCl):</strong> водород уходит оттуда, где водородов <em>меньше всего</em> (от соседнего наименее гидрогенизированного углерода).</li>
+          <li><strong>Селективность в алканах (+Cl<sub>2</sub> на свету):</strong> водород замещается легче всего у <strong>третичного</strong>, затем у <strong>вторичного</strong>: <code>3° &gt; 2° &gt; 1°</code>. Пропан + Cl<sub>2</sub> &rarr; <strong>2-хлорпропан</strong>!</li>
+          <li><strong>Сопряженные диены (1,4-присоединение):</strong> при нагревании бутадиена-1,3 с галогеном двойная связь прыгает <strong>в центр</strong>: <code>CH<sub>2</sub>Cl—CH=CH—CH<sub>2</sub>Cl</code>!</li>
+          <li><strong>Алкины + 2HCl:</strong> второй атом хлора садится к <em>тому же самому</em> углероду: образуется <strong>1,1-дихлорэтан</strong>, а не 1,2-!</li>
+          <li><strong>Пиролиз метана:</strong> уравнивай! <code>2CH<sub>4</sub> &rarr; C<sub>2</sub>H<sub>2</sub> + 3H<sub>2</sub>&uarr;</code> (1500°C).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- РАЗДЕЛ: ГЕНЕТИЧЕСКИЕ ЦЕПОЧКИ ПРЕВРАЩЕНИЙ -->
+    <!-- ======================================================== -->
+    <section id="chains" class="section-card card-accent">
+      <div class="section-header">
+        <div class="section-title">
+          <span style="color:var(--accent)">🔗</span> Топ-4 цепочки химических превращений (Типичные задания К/Р)
+        </div>
+        <span class="tag-rule">ГЕНЕТИЧЕСКАЯ СВЯЗЬ КЛАССОВ</span>
+      </div>
+      <p style="color:var(--text-muted); margin-bottom: 20px;">На контрольной работе почти всегда дают цепочку превращений. Попробуйте написать реакции самостоятельно, а затем нажмите на кнопку, чтобы проверить уравнения и условия (катализаторы, температура):</p>
+
+      <!-- Цепочка 1 -->
+      <div class="chain-box">
+        <div style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Цепочка №1: От неорганики до альдегида</div>
+        <div class="chain-scheme">CaCO<sub>3</sub> &rarr;<sup>(1)</sup> CaO &rarr;<sup>(2)</sup> CaC<sub>2</sub> &rarr;<sup>(3)</sup> C<sub>2</sub>H<sub>2</sub> &rarr;<sup>(4)</sup> CH<sub>3</sub>—CHO</div>
+        <button class="chain-btn" onclick="toggleChain('chain1')">👁️ Показать решение и условия реакций</button>
+        <div class="chain-solution" id="chain1">
+          <p><strong>1)</strong> CaCO<sub>3</sub> <span style="color:var(--text-muted)">&rarr;[t°]</span> CaO + CO<sub>2</sub>&uarr; <em>(обжиг известняка)</em></p>
+          <p><strong>2)</strong> CaO + 3C <span style="color:var(--text-muted)">&rarr;[t &approx; 2000°C]</span> CaC<sub>2</sub> + CO&uarr; <em>(получение карбида кальция в электропечах)</em></p>
+          <p><strong>3)</strong> CaC<sub>2</sub> + 2H<sub>2</sub>O &rarr; HC&equiv;CH&uarr; (ацетилен) + Ca(OH)<sub>2</sub> <em>(гидролиз карбида)</em></p>
+          <p><strong>4)</strong> HC&equiv;CH + H<sub>2</sub>O <span style="color:var(--text-muted)">&rarr;[HgSO<sub>4</sub>, H<sub>2</sub>SO<sub>4</sub>, t°]</span> CH<sub>3</sub>—CHO <em>(реакция М.Г. Кучерова, гидратация до уксусного альдегида!)</em></p>
+        </div>
+      </div>
+
+      <!-- Цепочка 2 -->
+      <div class="chain-box">
+        <div style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Цепочка №2: От метана до этанола</div>
+        <div class="chain-scheme">CH<sub>4</sub> &rarr;<sup>(1)</sup> C<sub>2</sub>H<sub>2</sub> &rarr;<sup>(2)</sup> C<sub>2</sub>H<sub>4</sub> &rarr;<sup>(3)</sup> C<sub>2</sub>H<sub>5</sub>Cl &rarr;<sup>(4)</sup> C<sub>4</sub>H<sub>10</sub></div>
+        <button class="chain-btn" onclick="toggleChain('chain2')">👁️ Показать решение и условия реакций</button>
+        <div class="chain-solution" id="chain2">
+          <p><strong>1)</strong> 2CH<sub>4</sub> <span style="color:var(--text-muted)">&rarr;[1500°C, закалка]</span> HC&equiv;CH + 3H<sub>2</sub>&uarr; <em>(высокотемпературный пиролиз)</em></p>
+          <p><strong>2)</strong> HC&equiv;CH + H<sub>2</sub> <span style="color:var(--text-muted)">&rarr;[Pd/BaSO<sub>4</sub>]</span> H<sub>2</sub>C=CH<sub>2</sub> <em>(селективное гидрирование до алкена)</em></p>
+          <p><strong>3)</strong> H<sub>2</sub>C=CH<sub>2</sub> + HCl &rarr; CH<sub>3</sub>—CH<sub>2</sub>Cl <em>(гидрохлорирование этилена)</em></p>
+          <p><strong>4)</strong> 2CH<sub>3</sub>—CH<sub>2</sub>Cl + 2Na &rarr; <strong>CH<sub>3</sub>—CH<sub>2</sub>—CH<sub>2</sub>—CH<sub>3</sub> (бутан)</strong> + 2NaCl <em>(РЕАКЦИЯ ВЮРЦА — удвоение углеродной цепи металлическим натрием!)</em></p>
+        </div>
+      </div>
+
+      <!-- Цепочка 3 -->
+      <div class="chain-box">
+        <div style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Цепочка №3: Превращения спирта через правило Зайцева и Марковникова</div>
+        <div class="chain-scheme">Пропанол-1 &rarr;<sup>(1)</sup> Пропен &rarr;<sup>(2)</sup> 2-хлорпропан &rarr;<sup>(3)</sup> Пропанол-2</div>
+        <button class="chain-btn" onclick="toggleChain('chain3')">👁️ Показать решение и условия реакций</button>
+        <div class="chain-solution" id="chain3">
+          <p><strong>1)</strong> CH<sub>3</sub>—CH<sub>2</sub>—CH<sub>2</sub>—OH <span style="color:var(--text-muted)">&rarr;[H<sub>2</sub>SO<sub>4(конц)</sub>, t &gt; 140°C]</span> CH<sub>3</sub>—CH=CH<sub>2</sub> + H<sub>2</sub>O <em>(дегидратация спирта)</em></p>
+          <p><strong>2)</strong> CH<sub>3</sub>—CH=CH<sub>2</sub> + HCl &rarr; CH<sub>3</sub>—CH(Cl)—CH<sub>3</sub> <em>(по правилу Марковникова: H к CH<sub>2</sub>, Cl к CH)</em></p>
+          <p><strong>3)</strong> CH<sub>3</sub>—CH(Cl)—CH<sub>3</sub> + KOH<sub>(водный р-р)</sub> <span style="color:var(--text-muted)">&rarr;[t°]</span> CH<sub>3</sub>—CH(OH)—CH<sub>3</sub> + KCl <em>(щелочной гидролиз галогеналкана дает вторичный спирт!)</em></p>
+        </div>
+      </div>
+
+      <!-- Цепочка 4 -->
+      <div class="chain-box">
+        <div style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Цепочка №4: Получение синтетического каучука</div>
+        <div class="chain-scheme">Бутан &rarr;<sup>(1)</sup> Бутадиен-1,3 &rarr;<sup>(2)</sup> Бутадиеновый каучук</div>
+        <button class="chain-btn" onclick="toggleChain('chain4')">👁️ Показать решение и условия реакций</button>
+        <div class="chain-solution" id="chain4">
+          <p><strong>1)</strong> CH<sub>3</sub>—CH<sub>2</sub>—CH<sub>2</sub>—CH<sub>3</sub> <span style="color:var(--text-muted)">&rarr;[Cr<sub>2</sub>O<sub>3</sub> / Al<sub>2</sub>O<sub>3</sub>, 600°C]</span> CH<sub>2</sub>=CH—CH=CH<sub>2</sub> + 2H<sub>2</sub>&uarr; <em>(каталитическое дегидрирование бутана)</em></p>
+          <p><strong>2)</strong> n CH<sub>2</sub>=CH—CH=CH<sub>2</sub> <span style="color:var(--text-muted)">&rarr;[Na, t°]</span> (—CH<sub>2</sub>—CH=CH—CH<sub>2</sub>—)<sub>n</sub> <em>(стереорегулярная полимеризация дивинила)</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- РАЗДЕЛ: КАЧЕСТВЕННЫЕ РЕАКЦИИ (3 ПРОБИРКИ) -->
+    <!-- ======================================================== -->
+    <section id="lab" class="section-card card-alkene">
+      <div class="section-header">
+        <div class="section-title">
+          <span style="color:var(--alkene)">🧪</span> Качественный анализ: «Как различить 3 пробирки?»
+        </div>
+        <span class="tag-success">ЛЮБИМЫЙ ВОПРОС УЧИТЕЛЯ</span>
+      </div>
+      <p style="color:var(--text-muted); margin-bottom: 16px;">
+        <strong>Задача:</strong> В трёх неподписанных пробирках находятся газы: <strong>этан</strong> (алкан), <strong>этен</strong> (алкен) и <strong>этин</strong> (алкин). Как опытным путем определить, в какой пробирке какой газ находится?
+      </p>
+
+      <div class="grid-3">
+        <div class="info-pane">
+          <h4>Шаг 1: Пропускаем через бромную воду (Br<sub>2</sub>)</h4>
+          <p>• В пробирке с <strong>этаном</strong> окраска бромной воды <em>НЕ меняется</em> (алканы не реагируют на холоду без света).</p>
+          <p>• В пробирках с <strong>этеном</strong> и <strong>этином</strong> красно-бурый цвет бромной воды <strong>мгновенно обесцвечивается</strong>!</p>
+          <div style="font-size:0.8rem; color:var(--accent); margin-top:8px;">Этан сразу опознан!</div>
+        </div>
+        <div class="info-pane">
+          <h4>Шаг 2: Различаем этен и этин</h4>
+          <p>Пропускаем оставшиеся два газа через <strong>аммиачный раствор оксида серебра [Ag(NH<sub>3</sub>)<sub>2</sub>]OH</strong> (реактив Толленса):</p>
+          <p>• <strong>Этен</strong> — реакции <em>нет</em>.</p>
+          <p>• <strong>Этин (ацетилен)</strong> — выпадает <strong>серый / белый осадок ацетиленида серебра</strong>:</p>
+          <div style="font-size:0.85rem; font-family:monospace; color:#f59e0b; margin-top:6px;">HC&equiv;CH + 2[Ag(NH<sub>3</sub>)<sub>2</sub>]OH &rarr; AgC&equiv;CAg&darr; + 4NH<sub>3</sub> + 2H<sub>2</sub>O</div>
+        </div>
+        <div class="info-pane">
+          <h4>Дополнительно: Реакция Вагнера (KMnO<sub>4</sub>)</h4>
+          <p>И этен, и этин обесцвечивают фиолетовый раствор <strong>перманганата калия</strong> с образованием бурого осадка оксида марганца(IV) MnO<sub>2</sub>&darr;:</p>
+          <div style="font-size:0.8rem; font-family:monospace; color:var(--text-muted); margin-top:6px;">
+            3C<sub>2</sub>H<sub>4</sub> + 2KMnO<sub>4</sub> + 4H<sub>2</sub>O &rarr; 3CH<sub>2</sub>OH-CH<sub>2</sub>OH (этиленгликоль) + 2MnO<sub>2</sub>&darr; + 2KOH
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- РАЗДЕЛ: ИНТЕРАКТИВНЫЕ ФЛЕШ-КАРТОЧКИ ДЛЯ ТРЕНИРОВКИ -->
+    <!-- ======================================================== -->
+    <section id="flashcards" class="section-card card-diene">
+      <div class="section-header">
+        <div class="section-title">
+          <span style="color:var(--diene)">🃏</span> Флеш-карточки для быстрой тренировки памяти
+        </div>
+        <span class="tag-rule">КЛИКНИ НА КАРТОЧКУ, ЧТОБЫ ПЕРЕВЕРНУТЬ</span>
+      </div>
+      <p style="color:var(--text-muted); margin-bottom: 20px;">Нажимайте на карточки, чтобы проверить, помните ли вы правила и факты наизусть:</p>
+
+      <div class="grid-4">
+        <!-- Карта 1 -->
+        <div class="flashcard" onclick="flipCard(this)">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <span style="font-size:1.5rem;">📏</span>
+              <strong>Гибридизация и углы</strong>
+              <div class="flashcard-hint">Алканы vs Алкены vs Алкины</div>
+            </div>
+            <div class="flashcard-back">
+              <p>• <strong>Алканы:</strong> sp<sup>3</sup>, 109°28'</p>
+              <p>• <strong>Алкены:</strong> sp<sup>2</sup>, 120°</p>
+              <p>• <strong>Алкины:</strong> sp, 180°</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карта 2 -->
+        <div class="flashcard" onclick="flipCard(this)">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <span style="font-size:1.5rem;">👑</span>
+              <strong>Правило Марковникова</strong>
+              <div class="flashcard-hint">Куда идет H при присоединении?</div>
+            </div>
+            <div class="flashcard-back">
+              <p><strong>Водород H</strong> идет к <em>более</em> гидрогенизированному атому C (где больше H). <strong>Галоген/OH</strong> — к <em>менее</em> гидрогенизированному C!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карта 3 -->
+        <div class="flashcard" onclick="flipCard(this)">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <span style="font-size:1.5rem;">✂️</span>
+              <strong>Правило Зайцева</strong>
+              <div class="flashcard-hint">Откуда отщепляется H?</div>
+            </div>
+            <div class="flashcard-back">
+              <p>Водород отщепляется от <strong>наименее</strong> гидрогенизированного (где меньше H) соседнего атома углерода! (бутанол-2 &rarr; <strong>бутен-2</strong>)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карта 4 -->
+        <div class="flashcard" onclick="flipCard(this)">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <span style="font-size:1.5rem;">⚡</span>
+              <strong>Алканы: порядок замещения</strong>
+              <div class="flashcard-hint">Где быстрее всего идет реакция с Cl₂?</div>
+            </div>
+            <div class="flashcard-back">
+              <p style="font-size:1.2rem; font-weight:bold; color:#34d399;">3° &gt; 2° &gt; 1°</p>
+              <p>Третичный C реагирует легче вторичного, а вторичный легче первичного!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карта 5 -->
+        <div class="flashcard" onclick="flipCard(this)">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <span style="font-size:1.5rem;">🔗</span>
+              <strong>Межклассовые изомеры</strong>
+              <div class="flashcard-hint">Кто кому изомерен?</div>
+            </div>
+            <div class="flashcard-back">
+              <p>• <strong>Алкены</strong> (C<sub>n</sub>H<sub>2n</sub>) &harr; <strong>Циклоалканы</strong></p>
+              <p>• <strong>Алкадиены</strong> (C<sub>n</sub>H<sub>2n-2</sub>) &harr; <strong>Алкины</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карта 6 -->
+        <div class="flashcard" onclick="flipCard(this)">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <span style="font-size:1.5rem;">🧪</span>
+              <strong>Реакция Кучерова</strong>
+              <div class="flashcard-hint">Гидратация алкинов (+H₂O, Hg²⁺)</div>
+            </div>
+            <div class="flashcard-back">
+              <p>• <strong>Ацетилен</strong> &rarr; <em>уксусный альдегид</em> CH<sub>3</sub>CHO</p>
+              <p>• <strong>Пропин и др.</strong> &rarr; <em>кетоны (ацетон)</em> CH<sub>3</sub>COCH<sub>3</sub></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карта 7 -->
+        <div class="flashcard" onclick="flipCard(this)">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <span style="font-size:1.5rem;">🧱</span>
+              <strong>Карбид кальция</strong>
+              <div class="flashcard-hint">Гидролиз CaC₂</div>
+            </div>
+            <div class="flashcard-back">
+              <p><strong>CaC<sub>2</sub> + 2H<sub>2</sub>O &rarr; C<sub>2</sub>H<sub>2</sub>&uarr; + Ca(OH)<sub>2</sub></strong></p>
+              <p>Главный лабораторный способ получения ацетилена!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карта 8 -->
+        <div class="flashcard" onclick="flipCard(this)">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <span style="font-size:1.5rem;">🍇</span>
+              <strong>Реакция Зелинского</strong>
+              <div class="flashcard-hint">Тримеризация ацетилена</div>
+            </div>
+            <div class="flashcard-back">
+              <p><strong>3 C<sub>2</sub>H<sub>2</sub> &rarr;[C<sub>акт</sub>, 500°C] C<sub>6</sub>H<sub>6</sub></strong></p>
+              <p>Из трех молекул ацетилена образуется <strong>БЕНЗОЛ</strong>!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- СВОДНАЯ СУПЕР-ТАБЛИЦА -->
+    <!-- ======================================================== -->
+    <section id="summary" class="section-card">
+      <div class="section-header">
+        <div class="section-title">🧭 Сводная таблица 4 классов углеводородов</div>
+        <span class="tag-rule">ОБЯЗАТЕЛЬНО К ЗАУЧИВАНИЮ</span>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Класс</th>
+              <th>Общая формула</th>
+              <th>Связи и гибридизация</th>
+              <th>Геометрия и угол</th>
+              <th>Характерные реакции</th>
+              <th>Качественные реакции</th>
+              <th>Межклассовая изомерия</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong style="color:var(--alkane)">Алканы</strong></td>
+              <td>C<sub>n</sub>H<sub>2n+2</sub></td>
+              <td>Только одинарные &sigma;, sp<sup>3</sup></td>
+              <td>Тетраэдр, 109°28'</td>
+              <td>Радикальное замещение (S<sub>R</sub>), крекинг, изомеризация, горение</td>
+              <td>Горят бесцветным/синеватым пламенем, бромную воду <strong>НЕ</strong> обесцвечивают</td>
+              <td>Нет</td>
+            </tr>
+            <tr>
+              <td><strong style="color:var(--alkene)">Алкены</strong></td>
+              <td>C<sub>n</sub>H<sub>2n</sub></td>
+              <td>1 двойная (&sigma; + &pi;), sp<sup>2</sup></td>
+              <td>Плоскостная, 120°</td>
+              <td>Электрофильное присоединение (A<sub>E</sub>: +H<sub>2</sub>, +Hal<sub>2</sub>, +HHal, +H<sub>2</sub>O), полимеризация</td>
+              <td>Обесцвечивание <strong>бромной воды</strong> (Br<sub>2</sub>) и <strong>KMnO<sub>4</sub></strong> (Вагнер)</td>
+              <td>С <strong>циклоалканами</strong></td>
+            </tr>
+            <tr>
+              <td><strong style="color:var(--diene)">Алкадиены</strong></td>
+              <td>C<sub>n</sub>H<sub>2n-2</sub></td>
+              <td>2 двойные (&sigma; + &pi;), sp<sup>2</sup></td>
+              <td>Плоскостная сопряженная система</td>
+              <td>Присоединение 1,2 и 1,4 (термодинамический контроль), полимеризация в каучуки</td>
+              <td>Обесцвечивание бромной воды и раствора KMnO<sub>4</sub></td>
+              <td>С <strong>алкинами</strong></td>
+            </tr>
+            <tr>
+              <td><strong style="color:var(--alkyne)">Алкины</strong></td>
+              <td>C<sub>n</sub>H<sub>2n-2</sub></td>
+              <td>1 тройная (&sigma; + 2&pi;), sp</td>
+              <td>Линейная, 180°</td>
+              <td>Ступенчатое присоединение (A<sub>E</sub>), гидратация (Кучеров), ди/тримеризация, кислотные свойства</td>
+              <td>Обесцвечивание Br<sub>2</sub>, осадок с аммиачным раствором Ag<sub>2</sub>O (для терминальных)</td>
+              <td>С <strong>алкадиенами</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- РАЗДЕЛ 1: АЛКАНЫ -->
+    <!-- ======================================================== -->
+    <section id="alkanes" class="section-card card-alkane">
+      <div class="section-header">
+        <div class="section-title">
+          <span style="color:var(--alkane)">●</span> 1. Алканы (Предельные углеводороды, Парафины)
+        </div>
+        <span class="badge badge-alkane">C<sub>n</sub>H<sub>2n+2</sub></span>
+      </div>
+
+      <div class="grid-2">
+        <div class="info-pane">
+          <h4>Характеристика строения</h4>
+          <p>• В молекулах присутствуют <strong>только одинарные &sigma;-связи</strong> (C—C и C—H).</p>
+          <p>• Все атомы углерода в состоянии <strong>sp<sup>3</sup>-гибридизации</strong>.</p>
+          <p>• Валентный угол: <strong>109°28'</strong> (тетраэдрическое строение).</p>
+          <p>• Длина связи C—C: <strong>0.154 нм</strong>.</p>
+          <p>• Изомерия: <strong>только углеродного скелета</strong> (начиная с бутана C<sub>4</sub>H<sub>10</sub>).</p>
+        </div>
+        <div class="info-pane">
+          <h4>Гомологический ряд и радикалы (из тетради)</h4>
+          <p><strong>CH<sub>4</sub></strong> Метан &rarr; Метил (—CH<sub>3</sub>)</p>
+          <p><strong>C<sub>2</sub>H<sub>6</sub></strong> Этан &rarr; Этил (—C<sub>2</sub>H<sub>5</sub>)</p>
+          <p><strong>C<sub>3</sub>H<sub>8</sub></strong> Пропан &rarr; Пропил (—C<sub>3</sub>H<sub>7</sub>)</p>
+          <p><strong>C<sub>4</sub>H<sub>10</sub></strong> Бутан &rarr; Бутил (—C<sub>4</sub>H<sub>9</sub>)</p>
+          <p><strong>C<sub>5</sub>H<sub>12</sub></strong> Пентан &rarr; Амил / Пентил (—C<sub>5</sub>H<sub>11</sub>)</p>
+          <p>Далее: <em>Гексан (C<sub>6</sub>), Гептан (C<sub>7</sub>), Октан (C<sub>8</sub>), Нонан (C<sub>9</sub>), Декан (C<sub>10</sub>)</em>.</p>
+        </div>
+      </div>
+
+      <h3 style="margin: 20px 0 10px;">Правила номенклатуры ИЮПАК для алканов</h3>
+      <div class="info-pane" style="margin-bottom: 20px;">
+        <ol style="padding-left: 20px;">
+          <li><strong>Найти самую длинную непрерывную углеродную цепь</strong> — это главная цепь (корень названия).</li>
+          <li><strong>Пронумеровать цепь с того конца</strong>, к которому ближе находится заместитель (радикал R).</li>
+          <li>Если разветвления равноудалены, нумеруют с того конца, где заместителей больше или они проще.</li>
+          <li>Указать цифрами номера атомов углерода с радикалами, приставки <em>ди-, три-, тетра-</em> и назвать главную цепь.</li>
+        </ol>
+      </div>
+
+      <h4>Примеры изомеров и названий из вашей тетради:</h4>
+      <div class="grid-2">
+        <div>
+          <div class="struct-box">
+  CH3
+   |
+CH3-CH-CH3
+          </div>
+          <p><strong>2-метилпропан</strong> (изобутан)</p>
+        </div>
+        <div>
+          <div class="struct-box">
+      CH3
+       |
+CH3-CH2-CH-CH2-CH3
+          </div>
+          <p><strong>3-метилпентан</strong> (не путать с "2-этилбутаном"!)</p>
+        </div>
+        <div>
+          <div class="struct-box">
+  CH3 CH3
+   |   |
+CH3-CH - CH - CH3
+          </div>
+          <p><strong>2,3-диметилбутан</strong></p>
+        </div>
+        <div>
+          <div class="struct-box">
+    CH3
+     |
+CH3 - C - CH2 - CH3
+     |
+    CH3
+          </div>
+          <p><strong>2,2-диметилбутан</strong></p>
+        </div>
+      </div>
+
+      <h3 style="margin: 24px 0 12px;">Химические свойства алканов</h3>
+
+      <!-- 1. Горение -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>1. Полное окисление (Горение)</span>
+          <span class="tag-rule">Экзотермическая</span>
+        </div>
+        <div class="reaction-formula">CH<sub>4</sub> + 2O<sub>2</sub> &rarr; CO<sub>2</sub> + 2H<sub>2</sub>O + Q</div>
+        <div class="reaction-note">
+          В общем виде: C<sub>n</sub>H<sub>2n+2</sub> + (1.5n + 0.5)O<sub>2</sub> &rarr; n CO<sub>2</sub> + (n+1) H<sub>2</sub>O. Все алканы горят с выделением тепла.
+        </div>
+      </div>
+
+      <!-- 2. Галогенирование -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>2. Галогенирование (Свободнорадикальное замещение S<sub>R</sub>)</span>
+          <span class="tag-rule">Свет h&nu;</span>
+        </div>
+        <div class="reaction-formula">CH<sub>4</sub> + Cl<sub>2</sub> <span style="color:var(--text-muted)">&rarr;[h&nu;]</span> CH<sub>3</sub>Cl + HCl</div>
+        <div class="reaction-formula">CH<sub>3</sub>-CH<sub>2</sub>-CH<sub>3</sub> + Cl<sub>2</sub> <span style="color:var(--text-muted)">&rarr;[h&nu;]</span> CH<sub>3</sub>-CH(Cl)-CH<sub>3</sub> + HCl</div>
+        <div class="reaction-note">
+          <strong>ВАЖНОЕ ПРАВИЛО ИЗ ТЕТРАДИ:</strong> Замещение атома водорода легче всего протекает у <strong>третичного</strong> атома C, затем у <strong>вторичного</strong>, и труднее всего — у <strong>первичного</strong>:
+          <br><strong style="color:var(--accent)">3° &gt; 2° &gt; 1°</strong>. Именно поэтому при хлорировании пропана основным продуктом является <strong>2-хлорпропан</strong>, а не 1-хлорпропан!
+        </div>
+      </div>
+
+      <!-- 3. Крекинг -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>3. Крекинг (Термический разрыв связей C—C)</span>
+          <span class="tag-rule">t°</span>
+        </div>
+        <div class="reaction-formula">C<sub>4</sub>H<sub>10</sub> <span style="color:var(--text-muted)">&rarr;[t°]</span> CH<sub>3</sub>-CH<sub>3</sub> (алкан) + CH<sub>2</sub>=CH<sub>2</sub> (алкен)</div>
+        <div class="reaction-formula">CH<sub>3</sub>-CH<sub>2</sub>-CH<sub>2</sub>-CH<sub>2</sub>-CH<sub>3</sub> <span style="color:var(--text-muted)">&rarr;[t°]</span> CH<sub>3</sub>-CH=CH<sub>2</sub> + CH<sub>3</sub>-CH<sub>3</sub>  ИЛИ  CH<sub>3</sub>-CH<sub>2</sub>-CH<sub>3</sub> + CH<sub>2</sub>=CH<sub>2</sub></div>
+        <div class="reaction-note">
+          При крекинге молекула высшего алкана расщепляется на пару: <strong>короткий алкан + короткий алкен</strong>.
+        </div>
+      </div>
+
+      <!-- 4. Изомеризация -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>4. Изомеризация (Перестройка углеродного скелета)</span>
+          <span class="tag-rule">AlCl<sub>3</sub>, t°</span>
+        </div>
+        <div class="reaction-formula">CH<sub>3</sub>-CH<sub>2</sub>-CH<sub>2</sub>-CH<sub>3</sub> <span style="color:var(--text-muted)">&rarr;[AlCl<sub>3</sub>, t°]</span> CH<sub>3</sub>-CH(CH<sub>3</sub>)-CH<sub>3</sub> (2-метилпропан)</div>
+      </div>
+
+      <!-- 5. Пиролиз метана -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>5. Пиролиз и дегидрирование метана (Разложение)</span>
+          <span class="tag-danger">РАЗЛИЧНЫЕ t°</span>
+        </div>
+        <div class="reaction-formula">1) При 1000°C: CH<sub>4</sub> <span style="color:var(--text-muted)">&rarr;[1000°C]</span> C (сажа) + 2H<sub>2</sub>&uarr;</div>
+        <div class="reaction-formula">2) При 1500-1600°C: 2CH<sub>4</sub> <span style="color:var(--text-muted)">&rarr;[1600°C]</span> HC&equiv;CH (ацетилен) + 3H<sub>2</sub>&uarr;</div>
+        <div class="reaction-note">
+          ⚠️ <strong>Ловушка тетради:</strong> Обратите внимание на коэффициенты во второй реакции! Перед CH<sub>4</sub> обязательно ставится <strong>2</strong>, а перед H<sub>2</sub> — <strong>3</strong>!
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- РАЗДЕЛ 2: АЛКЕНЫ -->
+    <!-- ======================================================== -->
+    <section id="alkenes" class="section-card card-alkene">
+      <div class="section-header">
+        <div class="section-title">
+          <span style="color:var(--alkene)">●</span> 2. Алкены (Этиленовые углеводороды, Олефины)
+        </div>
+        <span class="badge badge-alkene">C<sub>n</sub>H<sub>2n</sub></span>
+      </div>
+
+      <div class="grid-2">
+        <div class="info-pane">
+          <h4>Характеристика строения</h4>
+          <p>• Содержат <strong>одну двойную связь C=C</strong> (одна прочная &sigma;-связь и одна легко поляризуемая &pi;-связь).</p>
+          <p>• Атомы при двойной связи в состоянии <strong>sp<sup>2</sup>-гибридизации</strong>.</p>
+          <p>• Валентный угол: <strong>120°</strong>, плоское строение фрагмента C=C.</p>
+          <p>• Длина связи C=C: <strong>0.134 нм</strong>.</p>
+          <p>• Гомологи: <em>этен (этилен), пропен (пропилен), бутен-1, бутен-2...</em></p>
+        </div>
+        <div class="info-pane">
+          <h4>Виды изомерии алкенов</h4>
+          <p>1. <strong>Углеродного скелета:</strong> бутен-1 и 2-метилпропен.</p>
+          <p>2. <strong>Положения кратной связи:</strong> бутен-1 (CH<sub>2</sub>=CH-CH<sub>2</sub>-CH<sub>3</sub>) и бутен-2 (CH<sub>3</sub>-CH=CH-CH<sub>3</sub>).</p>
+          <p>3. <strong>Межклассовая:</strong> с <em>циклоалканами</em>! (например, гексен C<sub>6</sub>H<sub>12</sub> и метилциклопентан или циклогексан).</p>
+          <p>4. <strong>Геометрическая (цис-/транс-):</strong> для бутена-2 (заместители по одну сторону или по разные относительно плоскости &pi;-связи).</p>
+        </div>
+      </div>
+
+      <div class="info-pane" style="margin: 16px 0;">
+        <h4 style="color:var(--alkene)">ПРАВИЛО НУМЕРАЦИИ АЛКЕНОВ ПО ИЮПАК:</h4>
+        <p>Нумерация цепи начинается <strong>СТРОГО с того конца, к которому ближе ДВОЙНАЯ СВЯЗЬ</strong>! Кратная связь имеет <strong>старший приоритет</strong> над любыми алкильными радикалами.</p>
+        <p><em>Пример из тетради:</em> <code>H<sub>3</sub>C—CH(CH<sub>3</sub>)—CH<sub>2</sub>—CH=CH<sub>2</sub></code> &rarr; нумеруем справа! Это <strong>4-метилпентен-1</strong> (а не 2-метилпентен-4!).</p>
+      </div>
+
+      <h3 style="margin: 24px 0 12px;">Способы получения алкенов</h3>
+
+      <!-- 1. Дегидратация спиртов -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>1. Внутримолекулярная дегидратация спиртов (-H<sub>2</sub>O)</span>
+          <span class="tag-rule">ПРАВИЛО ЗАЙЦЕВА</span>
+        </div>
+        <div class="reaction-formula">CH<sub>3</sub>-CH<sub>2</sub>-OH <span style="color:var(--text-muted)">&rarr;[H<sub>2</sub>SO<sub>4(конц)</sub>, t &gt; 140°C]</span> CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub>O</div>
+        <div class="reaction-formula">CH<sub>3</sub>-CH(OH)-CH<sub>2</sub>-CH<sub>3</sub> <span style="color:var(--text-muted)">&rarr;[H<sub>2</sub>SO<sub>4(конц)</sub>, t°]</span> CH<sub>3</sub>-CH=CH-CH<sub>3</sub> (бутен-2) + H<sub>2</sub>O</div>
+        <div class="reaction-note">
+          <strong>ПРАВИЛО ЗАЙЦЕВА:</strong> При отщеплении воды от спиртов водород отщепляется от <strong>наименее гидрогенизированного</strong> (соседнего с OH) атома углерода (где водородов меньше всего)! Поэтому из бутанола-2 получается бутен-2, а не бутен-1.
+        </div>
+      </div>
+
+      <!-- 2. Гидрирование алкинов -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>2. Неполное гидрирование алкинов (+H<sub>2</sub>)</span>
+          <span class="tag-rule">Pd/t°</span>
+        </div>
+        <div class="reaction-formula">HC&equiv;CH + H<sub>2</sub> <span style="color:var(--text-muted)">&rarr;[Pd/BaSO<sub>4</sub>]</span> H<sub>2</sub>C=CH<sub>2</sub></div>
+      </div>
+
+      <h3 style="margin: 24px 0 12px;">Химические свойства алкенов (Реакции присоединения A<sub>E</sub>)</h3>
+
+      <!-- 1. Галогенирование -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>1. Галогенирование (+Hal<sub>2</sub>)</span>
+          <span class="tag-rule">КАЧЕСТВЕННАЯ РЕАКЦИЯ</span>
+        </div>
+        <div class="reaction-formula">H<sub>2</sub>C=CH<sub>2</sub> + Cl<sub>2</sub> &rarr; CH<sub>2</sub>Cl-CH<sub>2</sub>Cl (1,2-дихлорэтан)</div>
+        <div class="reaction-formula">H<sub>2</sub>C=CH<sub>2</sub> + Br<sub>2(водн)</sub> &rarr; CH<sub>2</sub>Br-CH<sub>2</sub>Br (1,2-дибромэтан)</div>
+        <div class="reaction-note">
+          Обесцвечивание красно-бурой бромной воды — <strong>главная качественная реакция на кратную связь!</strong>
+        </div>
+      </div>
+
+      <!-- 2. Гидрогалогенирование -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>2. Гидрогалогенирование (+HHal: HCl, HBr, HI)</span>
+          <span class="tag-rule">ПРАВИЛО МАРКОВНИКОВА</span>
+        </div>
+        <div class="reaction-formula">H<sub>2</sub>C=CH<sub>2</sub> + HCl &rarr; CH<sub>3</sub>-CH<sub>2</sub>Cl (хлорэтан)</div>
+        <div class="reaction-formula">H<sub>2</sub>C=CH-CH<sub>3</sub> + HCl &rarr; CH<sub>3</sub>-CH(Cl)-CH<sub>3</sub> (2-хлорпропан)</div>
+        <div class="reaction-note">
+          <strong>ПРАВИЛО МАРКОВНИКОВА:</strong> Водород присоединяется к <strong>более гидрогенизированному</strong> атому углерода при двойной связи (где больше H), а галоген — к <strong>менее гидрогенизированному</strong>!
+        </div>
+      </div>
+
+      <!-- 3. Гидратация -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>3. Гидратация (+H<sub>2</sub>O)</span>
+          <span class="tag-rule">H<sup>+</sup>, t° / Марковников</span>
+        </div>
+        <div class="reaction-formula">H<sub>2</sub>C=CH<sub>2</sub> + H<sub>2</sub>O <span style="color:var(--text-muted)">&rarr;[H<sub>2</sub>SO<sub>4</sub>, t°]</span> CH<sub>3</sub>-CH<sub>2</sub>-OH (этанол)</div>
+        <div class="reaction-formula">CH<sub>3</sub>-CH=CH<sub>2</sub> + H—OH <span style="color:var(--text-muted)">&rarr;[H<sup>+</sup>]</span> CH<sub>3</sub>-CH(OH)-CH<sub>3</sub> (пропанол-2)</div>
+        <div class="reaction-note">
+          По правилу Марковникова: водород H<sup>+</sup> идет к CH<sub>2</sub>, а группа OH<sup>-</sup> — к CH. Получается вторичный спирт <strong>пропанол-2</strong>!
+        </div>
+      </div>
+
+      <!-- 4. Полимеризация -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>4. Реакция полимеризации</span>
+          <span class="tag-rule">p, t°, кат.</span>
+        </div>
+        <div class="reaction-formula">n CH<sub>2</sub>=CH<sub>2</sub> <span style="color:var(--text-muted)">&rarr;[p, t°]</span> (—CH<sub>2</sub>—CH<sub>2</sub>—)<sub>n</sub> (полиэтилен)</div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- РАЗДЕЛ 3: АЛКАДИЕНЫ -->
+    <!-- ======================================================== -->
+    <section id="dienes" class="section-card card-diene">
+      <div class="section-header">
+        <div class="section-title">
+          <span style="color:var(--diene)">●</span> 3. Алкадиены (Диеновые углеводороды)
+        </div>
+        <span class="badge badge-diene">C<sub>n</sub>H<sub>2n-2</sub></span>
+      </div>
+
+      <div class="grid-2">
+        <div class="info-pane">
+          <h4>Классификация диенов по положению связей</h4>
+          <p><strong>1. Кумулированные:</strong> двойные связи у одного атома C:<br>
+          <code>CH<sub>2</sub>=C=CH<sub>2</sub></code> (пропадиен / аллен).</p>
+          <p><strong>2. Изолированные:</strong> разделены двумя и более &sigma;-связями (ведут себя как обычные алкены):<br>
+          <code>CH<sub>2</sub>=CH—CH<sub>2</sub>—CH=CH<sub>2</sub></code> (пентадиен-1,4).</p>
+          <p><strong>3. Сопряженные:</strong> двойные связи разделены <strong>ровно одной &sigma;-связью</strong> (единое &pi;-электронное облако):<br>
+          <code>CH<sub>2</sub>=CH—CH=CH<sub>2</sub></code> (бутадиен-1,3 / дивинил),<br>
+          <code>CH<sub>2</sub>=C(CH<sub>3</sub>)—CH=CH<sub>2</sub></code> (2-метилбутадиен-1,3 / изопрен).</p>
+        </div>
+        <div class="info-pane">
+          <h4>Изомерия алкадиенов</h4>
+          <p>• <strong>Углеродного скелета:</strong> бутадиен-1,3 и 2-метилбутадиен-1,3 (изопрен).</p>
+          <p>• <strong>Положения двойных связей:</strong> пентадиен-1,3 и пентадиен-1,4.</p>
+          <p>• <strong>Межклассовая:</strong> изомерны <strong>алкинам</strong>! (Формула C<sub>n</sub>H<sub>2n-2</sub> общая для диенов и алкинов: например, C<sub>4</sub>H<sub>6</sub> — это бутадиен-1,3 и бутин-1/бутин-2).</p>
+        </div>
+      </div>
+
+      <h3 style="margin: 24px 0 12px;">Особые свойства сопряженных диенов (1,2- и 1,4-присоединение)</h3>
+
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>1. Галогенирование бутадиена-1,3 (+Cl<sub>2</sub> / +Br<sub>2</sub>)</span>
+          <span class="tag-danger">1,2 против 1,4</span>
+        </div>
+        <div class="reaction-formula">
+          а) При недостатке Cl<sub>2</sub> (1:1):<br>
+          &bull; 1,4-присоединение (преобладает при нагревании):<br>
+          CH<sub>2</sub>=CH-CH=CH<sub>2</sub> + Cl<sub>2</sub> &rarr; <strong>CH<sub>2</sub>Cl—CH=CH—CH<sub>2</sub>Cl</strong> (1,4-дихлорбутен-2)<br>
+          &bull; 1,2-присоединение (при низких t°):<br>
+          CH<sub>2</sub>=CH-CH=CH<sub>2</sub> + Cl<sub>2</sub> &rarr; <strong>CH<sub>2</sub>Cl—CHCl—CH=CH<sub>2</sub></strong> (3,4-дихлорбутен-1)
+        </div>
+        <div class="reaction-formula">
+          б) При избытке Cl<sub>2</sub> (1:2):<br>
+          CH<sub>2</sub>=CH-CH=CH<sub>2</sub> + 2Cl<sub>2</sub> &rarr; <strong>CH<sub>2</sub>Cl—CHCl—CHCl—CH<sub>2</sub>Cl</strong> (1,2,3,4-тетрахлорбутан)
+        </div>
+        <div class="reaction-note">
+          <strong>Внимание:</strong> При 1,4-присоединении галогены садятся по краям (1-й и 4-й углероды), а двойная связь <strong>перемещается в центр</strong> (между 2-м и 3-м)!
+        </div>
+      </div>
+
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>2. Полимеризация диенов (Получение каучуков)</span>
+          <span class="tag-rule">С.В. Лебедев</span>
+        </div>
+        <div class="reaction-formula">
+          n CH<sub>2</sub>=CH-CH=CH<sub>2</sub> <span style="color:var(--text-muted)">&rarr;[Na / кат.]</span> (—CH<sub>2</sub>—CH=CH—CH<sub>2</sub>—)<sub>n</sub> (бутадиеновый каучук)
+        </div>
+        <div class="reaction-formula">
+          n CH<sub>2</sub>=C(CH<sub>3</sub>)-CH=CH<sub>2</sub> <span style="color:var(--text-muted)">&rarr;</span> (—CH<sub>2</sub>—C(CH<sub>3</sub>)=CH—CH<sub>2</sub>—)<sub>n</sub> (изопреновый каучук)
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- РАЗДЕЛ 4: АЛКИНЫ -->
+    <!-- ======================================================== -->
+    <section id="alkynes" class="section-card card-alkyne">
+      <div class="section-header">
+        <div class="section-title">
+          <span style="color:var(--alkyne)">●</span> 4. Алкины (Ацетиленовые углеводороды)
+        </div>
+        <span class="badge badge-alkyne">C<sub>n</sub>H<sub>2n-2</sub></span>
+      </div>
+
+      <div class="grid-2">
+        <div class="info-pane">
+          <h4>Характеристика строения</h4>
+          <p>• Содержат <strong>одну тройную связь C&equiv;C</strong> (одна прочная &sigma;-связь и две взаимно перпендикулярные &pi;-связи).</p>
+          <p>• Атомы углерода при тройной связи в <strong>sp-гибридизации</strong>.</p>
+          <p>• Валентный угол: <strong>180°</strong> (линейная форма молекулы).</p>
+          <p>• Длина связи C&equiv;C: <strong>0.120 нм</strong> (самая короткая и прочная).</p>
+          <p>• Гомологи: <em>этин (ацетилен) HC&equiv;CH, пропин HC&equiv;C—CH<sub>3</sub>, бутин-1, бутин-2...</em></p>
+        </div>
+        <div class="info-pane">
+          <h4>Изомерия алкинов</h4>
+          <p>• <strong>Положения тройной связи:</strong> бутин-1 (HC&equiv;C-CH<sub>2</sub>-CH<sub>3</sub>) и бутин-2 (CH<sub>3</sub>-C&equiv;C-CH<sub>3</sub>).</p>
+          <p>• <strong>Углеродного скелета</strong> (с C<sub>5</sub>): пентин-1 и 3-метилбутин-1.</p>
+          <p>• <strong>Межклассовая:</strong> с <em>алкадиенами</em> (например, C<sub>4</sub>H<sub>6</sub> — бутин-1 и бутадиен-1,3).</p>
+        </div>
+      </div>
+
+      <h3 style="margin: 24px 0 12px;">Способы получения алкинов (Строго из конспекта тетради!)</h3>
+
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>1. Карбидный способ (Промышленный синтез ацетилена)</span>
+          <span class="tag-rule">ЦЕПОЧКА ИЗ ТЕТРАДИ</span>
+        </div>
+        <div class="reaction-formula">1) Термическое разложение известняка: CaCO<sub>3</sub> <span style="color:var(--text-muted)">&rarr;[t°]</span> CaO + CO<sub>2</sub>&uarr;</div>
+        <div class="reaction-formula">2) Получение карбида кальция: CaO + 3C <span style="color:var(--text-muted)">&rarr;[t &approx; 2000°C]</span> CaC<sub>2</sub> + CO&uarr;</div>
+        <div class="reaction-formula">3) Гидролиз карбида кальция: <strong>CaC<sub>2</sub> + 2H<sub>2</sub>O &rarr; C<sub>2</sub>H<sub>2</sub>&uarr; (ацетилен) + Ca(OH)<sub>2</sub></strong></div>
+      </div>
+
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>2. Высокотемпературный пиролиз метана</span>
+          <span class="tag-danger">t = 1500-1600°C</span>
+        </div>
+        <div class="reaction-formula"><strong>2CH<sub>4</sub> <span style="color:var(--text-muted)">&rarr;[1500°C, быстр. охлаждение]</span> HC&equiv;CH + 3H<sub>2</sub>&uarr;</strong></div>
+      </div>
+
+      <h3 style="margin: 24px 0 12px;">Химические свойства алкинов</h3>
+
+      <!-- 1. Гидрирование -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>1. Ступенчатое гидрирование (+H<sub>2</sub>)</span>
+          <span class="tag-rule">Ni / Pd</span>
+        </div>
+        <div class="reaction-formula">HC&equiv;CH + H<sub>2</sub> <span style="color:var(--text-muted)">&rarr;[kat]</span> H<sub>2</sub>C=CH<sub>2</sub> (этилен) <span style="color:var(--text-muted)">&rarr;[+H<sub>2</sub>]</span> H<sub>3</sub>C—CH<sub>3</sub> (этан)</div>
+      </div>
+
+      <!-- 2. Галогенирование -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>2. Ступенчатое галогенирование (+Cl<sub>2</sub> / +Br<sub>2</sub>)</span>
+          <span class="tag-rule">Обесцвечивание Br<sub>2</sub></span>
+        </div>
+        <div class="reaction-formula">HC&equiv;CH + Cl<sub>2</sub> &rarr; CHCl=CHCl (1,2-дихлорэтен) <span style="color:var(--text-muted)">&rarr;[+Cl<sub>2</sub>]</span> CHCl<sub>2</sub>—CHCl<sub>2</sub> (1,1,2,2-тетрахлорэтан)</div>
+      </div>
+
+      <!-- 3. Гидрогалогенирование -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>3. Гидрогалогенирование (+HCl)</span>
+          <span class="tag-danger">ПРАВИЛО МАРКОВНИКОВА</span>
+        </div>
+        <div class="reaction-formula">1-я стадия: HC&equiv;CH + HCl &rarr; H<sub>2</sub>C=CH—Cl (винилхлорид / хлорэтен)</div>
+        <div class="reaction-formula">2-я стадия: H<sub>2</sub>C=CH—Cl + HCl &rarr; <strong>H<sub>3</sub>C—CH(Cl)<sub>2</sub> (1,1-дихлорэтан)</strong></div>
+        <div class="reaction-note">
+          ⚠️ <strong>СУПЕР-ЛОВУШКА К/Р:</strong> Во второй стадии второй атом хлора присоединяется к ТОМУ ЖЕ углероду, где уже есть хлор (по Марковникову: H идет к CH<sub>2</sub>)! Получается <strong>1,1-дихлорэтан</strong>, а НЕ 1,2-дихлорэтан!
+        </div>
+      </div>
+
+      <!-- 4. Межмолекулярные реакции (Димеризация и тримеризация) -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>4. Олигомеризация (Димеризация и Тримеризация)</span>
+          <span class="tag-rule">ОСОБЫЕ РЕАКЦИИ АЛКИНОВ</span>
+        </div>
+        <div class="reaction-formula">
+          <strong>Димеризация ацетилена (из тетради):</strong><br>
+          HC&equiv;CH + HC&equiv;CH <span style="color:var(--text-muted)">&rarr;[CuCl, NH<sub>4</sub>Cl]</span> <strong>H<sub>2</sub>C=CH—C&equiv;CH</strong> (бутен-1-ин-3 / винилацетилен)
+        </div>
+        <div class="reaction-formula" style="margin-top:10px;">
+          <strong>Тримеризация ацетилена (Реакция Зелинского):</strong><br>
+          3 C<sub>2</sub>H<sub>2</sub> <span style="color:var(--text-muted)">&rarr;[C<sub>акт</sub>, 450-500°C]</span> <strong>C<sub>6</sub>H<sub>6</sub></strong> (Бензол)
+        </div>
+      </div>
+
+      <!-- 5. Гидратация (Реакция Кучерова) -->
+      <div class="reaction-block">
+        <div class="reaction-title">
+          <span>5. Гидратация алкинов (Реакция М.Г. Кучерова)</span>
+          <span class="tag-rule">Hg<sup>2+</sup>, H<sup>+</sup></span>
+        </div>
+        <div class="reaction-formula">HC&equiv;CH + H<sub>2</sub>O <span style="color:var(--text-muted)">&rarr;[HgSO<sub>4</sub>, H<sub>2</sub>SO<sub>4</sub>]</span> <strong>CH<sub>3</sub>—CHO (уксусный альдегид / этаналь)</strong></div>
+        <div class="reaction-formula">CH<sub>3</sub>—C&equiv;CH + H<sub>2</sub>O <span style="color:var(--text-muted)">&rarr;[Hg<sup>2+</sup>]</span> <strong>CH<sub>3</sub>—CO—CH<sub>3</sub> (ацетон / пропанон)</strong></div>
+        <div class="reaction-note">
+          Запомните: <strong>только ацетилен</strong> дает альдегид! Все остальные гомологи (пропин, бутин...) по правилу Марковникова дают <strong>кетоны</strong>!
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- РАЗДЕЛ 5: РАЗБОР ЛОВУШЕК И ОШИБОК ИЗ ТЕТРАДИ -->
+    <!-- ======================================================== -->
+    <section id="traps" class="section-card card-danger">
+      <div class="section-header">
+        <div class="section-title">
+          <span style="color:var(--danger)">⚠️</span> ТОП-ОШИБОК И ЛОВУШЕК НА КОНТРОЛЬНОЙ РАБОТЕ
+        </div>
+        <span class="tag-danger">ГДЕ ВСЕ ТЕРЯЮТ БАЛЛЫ</span>
+      </div>
+
+      <!-- Ловушка 1: 2-этилбутан -->
+      <div class="trap-card">
+        <div class="trap-title">❌ Ловушка №1: Ошибка выбора главной цепи ("2-этилбутан")</div>
+        <p>На первой странице вашей тетради была сделана классическая ошибка: формула была названа <em>"2-этилбутан"</em>.</p>
+        <div class="struct-box">
+CH3 - CH2 - CH - CH3
+            |
+            CH2 - CH3
+        </div>
+        <p>Почему это неверно: соединение <span class="trap-wrong">"2-этилбутан"</span> вообще <strong>НЕ СУЩЕСТВУЕТ</strong> в природе! Самая длинная непрерывная углеродная цепь здесь состоит из <strong>5 атомов C</strong> (пентан), а у 3-го атома находится метил.</p>
+        <p>Правильное название: <span class="trap-correct">3-метилпентан</span>.</p>
+      </div>
+
+      <!-- Ловушка 2: Нумерация алканов vs непредельных -->
+      <div class="trap-card">
+        <div class="trap-title">❌ Ловушка №2: Нумерация от радикала или от кратной связи?</div>
+        <p>• В <strong>алканах</strong> нумерация всегда начинается с того конца, где ближе <strong>радикал</strong>.</p>
+        <p>• В <strong>алкенах, алкадиенах и алкинах</strong> кратная связь ВСЕГДА главнее любого радикала! Нумеруем с того конца, где ближе <strong>двойная или тройная связь</strong>, даже если все радикалы скучковались с другого конца!</p>
+        <p><em>Пример:</em> <code>CH<sub>3</sub>—C(CH<sub>3</sub>)<sub>2</sub>—CH<sub>2</sub>—CH=CH<sub>2</sub></code> — это <span class="trap-correct">4,4-диметилпентен-1</span>, а не <span class="trap-wrong">2,2-диметилпентен-4</span>!</p>
+      </div>
+
+      <!-- Ловушка 3: Пиролиз метана -->
+      <div class="trap-card">
+        <div class="trap-title">❌ Ловушка №3: Уравнивание пиролиза метана до ацетилена</div>
+        <p>В конспекте часто забывают расставить коэффициенты: <code>CH<sub>4</sub> &rarr; C<sub>2</sub>H<sub>2</sub> + H<sub>2</sub></code>.</p>
+        <p>Правильное уравнение: <span class="trap-correct">2CH<sub>4</sub> &rarr; C<sub>2</sub>H<sub>2</sub> + 3H<sub>2</sub>&uarr;</span> (при 1500-1600°C).</p>
+      </div>
+
+      <!-- Ловушка 4: Двойное присоединение к алкинам -->
+      <div class="trap-card">
+        <div class="trap-title">❌ Ловушка №4: Куда идет второй атом галогена в алкинах?</div>
+        <p>При гидрогалогенировании ацетилена (HC&equiv;CH + 2HCl):</p>
+        <p>1-я стадия: HC&equiv;CH + HCl &rarr; CH<sub>2</sub>=CHCl (винилхлорид).</p>
+        <p>2-я стадия: CH<sub>2</sub>=CHCl + HCl &rarr; по правилу Марковникова водород идет к CH<sub>2</sub> (где больше H), а второй Cl — к CH(Cl)!</p>
+        <p>Образуется: <span class="trap-correct">CH<sub>3</sub>—CHCl<sub>2</sub> (1,1-дихлорэтан)</span>, а НЕ <span class="trap-wrong">CH<sub>2</sub>Cl—CH<sub>2</sub>Cl (1,2-дихлорэтан)</span>!</p>
+      </div>
+
+      <!-- Ловушка 5: 1,4-присоединение в диенах -->
+      <div class="trap-card">
+        <div class="trap-title">❌ Ловушка №5: Куда девается двойная связь в бутадиене-1,3?</div>
+        <p>При 1,4-присоединении (CH<sub>2</sub>=CH—CH=CH<sub>2</sub> + Br<sub>2</sub>): атомы брома садятся на 1-й и 4-й углероды. Обе крайние двойные связи раскрываются, а их оставшиеся электроны спариваются между 2-м и 3-м атомами углерода:</p>
+        <p>Продукт: <span class="trap-correct">CH<sub>2</sub>Br—CH=CH—CH<sub>2</sub>Br (1,4-дибромбутен-2)</span> с двойной связью В ЦЕНТРЕ!</p>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- РАЗДЕЛ 6: РАСШИРЕННЫЙ ИНТЕРАКТИВНЫЙ ТРЕНАЖЕР (10 ЗАДАНИЙ) -->
+    <!-- ======================================================== -->
+    <section id="quiz" class="section-card">
+      <div class="section-header">
+        <div class="section-title">🧪 Интерактивный тренажер (10 тестовых заданий с оценкой)</div>
+        <span class="tag-rule">ПРОВЕРЬ СВОЙ БАЛЛ</span>
+      </div>
+      <p style="color:var(--text-muted); margin-bottom: 20px;">Ответьте на все 10 вопросов. В конце система рассчитает процент правильных ответов и поставит школьную отметку!</p>
+
+      <!-- Вопрос 1 -->
+      <div class="quiz-card" id="q1">
+        <div class="quiz-question">1. Какое правильное название по ИЮПАК имеет вещество CH<sub>3</sub>—CH<sub>2</sub>—CH(C<sub>2</sub>H<sub>5</sub>)—CH<sub>3</sub>?</div>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer('q1', 0, false)">А) 2-этилбутан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q1', 1, true)">Б) 3-метилпентан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q1', 2, false)">В) 2-метилпентан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q1', 3, false)">Г) гексан</button>
+        </div>
+        <div class="quiz-explanation" id="q1-exp">
+          <strong>Правильно: Б!</strong> Самая длинная углеродная цепь состоит из 5 атомов C (пентан). У 3-го углерода находится радикал метил —CH<sub>3</sub>. Названия "2-этилбутан" не существует!
+        </div>
+      </div>
+
+      <!-- Вопрос 2 -->
+      <div class="quiz-card" id="q2">
+        <div class="quiz-question">2. При хлорировании пропана (CH<sub>3</sub>—CH<sub>2</sub>—CH<sub>3</sub> + Cl<sub>2</sub> на свету) преимущественным продуктом является:</div>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer('q2', 0, false)">А) 1-хлорпропан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q2', 1, true)">Б) 2-хлорпропан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q2', 2, false)">В) 1,2-дихлорпропан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q2', 3, false)">Г) циклопропан</button>
+        </div>
+        <div class="quiz-explanation" id="q2-exp">
+          <strong>Правильно: Б!</strong> Радикальное замещение S<sub>R</sub> легче всего идет по вторичному атому C (связь C—H слабее, промежуточный радикал стабильнее: 3° &gt; 2° &gt; 1°). Поэтому образуется 2-хлорпропан.
+        </div>
+      </div>
+
+      <!-- Вопрос 3 -->
+      <div class="quiz-card" id="q3">
+        <div class="quiz-question">3. Какое вещество образуется при дегидратации бутанола-2 по правилу Зайцева?</div>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer('q3', 0, false)">А) Бутен-1</button>
+          <button class="quiz-btn" onclick="checkAnswer('q3', 1, true)">Б) Бутен-2</button>
+          <button class="quiz-btn" onclick="checkAnswer('q3', 2, false)">В) Дибутиловый эфир</button>
+          <button class="quiz-btn" onclick="checkAnswer('q3', 3, false)">Г) Бутан</button>
+        </div>
+        <div class="quiz-explanation" id="q3-exp">
+          <strong>Правильно: Б!</strong> По правилу Зайцева атом водорода отщепляется от наименее гидрогенизированного атома углерода (от CH<sub>2</sub>-группы, где всего 2 водорода, а не от CH<sub>3</sub>, где 3). Образуется симметричный бутен-2: CH<sub>3</sub>—CH=CH—CH<sub>3</sub>.
+        </div>
+      </div>
+
+      <!-- Вопрос 4 -->
+      <div class="quiz-card" id="q4">
+        <div class="quiz-question">4. Какие коэффициенты имеют вещества в уравнении пиролиза метана до ацетилена: [x] CH<sub>4</sub> &rarr; C<sub>2</sub>H<sub>2</sub> + [y] H<sub>2</sub>?</div>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer('q4', 0, false)">А) x = 1, y = 1</button>
+          <button class="quiz-btn" onclick="checkAnswer('q4', 1, false)">Б) x = 2, y = 2</button>
+          <button class="quiz-btn" onclick="checkAnswer('q4', 2, true)">В) x = 2, y = 3</button>
+          <button class="quiz-btn" onclick="checkAnswer('q4', 3, false)">Г) x = 3, y = 4</button>
+        </div>
+        <div class="quiz-explanation" id="q4-exp">
+          <strong>Правильно: В!</strong> Уравнение: 2CH<sub>4</sub> &rarr; C<sub>2</sub>H<sub>2</sub> + 3H<sub>2</sub>. Слева: 2 C, 8 H. Справа: 2 C, 2 + 6 = 8 H.
+        </div>
+      </div>
+
+      <!-- Вопрос 5 -->
+      <div class="quiz-card" id="q5">
+        <div class="quiz-question">5. Какой продукт образуется при гидрохлорировании ацетилена избытком HCl (C<sub>2</sub>H<sub>2</sub> + 2HCl)?</div>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer('q5', 0, false)">А) 1,2-дихлорэтан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q5', 1, true)">Б) 1,1-дихлорэтан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q5', 2, false)">В) 1,1,2-трихлорэтан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q5', 3, false)">Г) хлорэтан</button>
+        </div>
+        <div class="quiz-explanation" id="q5-exp">
+          <strong>Правильно: Б!</strong> Первая молекула HCl дает винилхлорид CH<sub>2</sub>=CHCl. Вторая молекула присоединяется строго по правилу Марковникова: водород идет к CH<sub>2</sub>, а хлор — к CHCl. Получается CH<sub>3</sub>—CHCl<sub>2</sub> (1,1-дихлорэтан).
+        </div>
+      </div>
+
+      <!-- Вопрос 6 -->
+      <div class="quiz-card" id="q6">
+        <div class="quiz-question">6. Какое органическое вещество получится при гидратации ацетилена по реакции Кучерова?</div>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer('q6', 0, false)">А) Этанол</button>
+          <button class="quiz-btn" onclick="checkAnswer('q6', 1, true)">Б) Уксусный альдегид (этаналь)</button>
+          <button class="quiz-btn" onclick="checkAnswer('q6', 2, false)">В) Уксусная кислота</button>
+          <button class="quiz-btn" onclick="checkAnswer('q6', 3, false)">Г) Ацетон</button>
+        </div>
+        <div class="quiz-explanation" id="q6-exp">
+          <strong>Правильно: Б!</strong> Гидратация ацетилена (HC&equiv;CH + H<sub>2</sub>O) в присутствии солей ртути Hg<sup>2+</sup> дает нестойкий виниловый спирт, который сразу изомеризуется в уксусный альдегид CH<sub>3</sub>CHO!
+        </div>
+      </div>
+
+      <!-- Вопрос 7 -->
+      <div class="quiz-card" id="q7">
+        <div class="quiz-question">7. Какой углеводород является межклассовым изомером бутена-1?</div>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer('q7', 0, false)">А) Бутан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q7', 1, false)">Б) Бутин-1</button>
+          <button class="quiz-btn" onclick="checkAnswer('q7', 2, true)">В) Циклобутан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q7', 3, false)">Г) Бутадиен-1,3</button>
+        </div>
+        <div class="quiz-explanation" id="q7-exp">
+          <strong>Правильно: В!</strong> Общая формула алкенов C<sub>n</sub>H<sub>2n</sub> совпадает с общей формулой <strong>циклоалканов</strong>! Формула бутена-1: C<sub>4</sub>H<sub>8</sub>, формула циклобутана: C<sub>4</sub>H<sub>8</sub>.
+        </div>
+      </div>
+
+      <!-- Вопрос 8 -->
+      <div class="quiz-card" id="q8">
+        <div class="quiz-question">8. В какой продукт превращается бутадиен-1,3 при 1,4-присоединении брома (CH<sub>2</sub>=CH—CH=CH<sub>2</sub> + Br<sub>2</sub>)?</div>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer('q8', 0, false)">А) 3,4-дибромбутен-1</button>
+          <button class="quiz-btn" onclick="checkAnswer('q8', 1, true)">Б) 1,4-дибромбутен-2</button>
+          <button class="quiz-btn" onclick="checkAnswer('q8', 2, false)">В) 1,2,3,4-тетрабромбутан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q8', 3, false)">Г) 2,3-дибромбутен-2</button>
+        </div>
+        <div class="quiz-explanation" id="q8-exp">
+          <strong>Правильно: Б!</strong> Атомы брома присоединяются к крайним атомам 1 и 4, а двойная связь образуется между центральными углеродами 2 и 3: CH<sub>2</sub>Br—CH=CH—CH<sub>2</sub>Br (1,4-дибромбутен-2).
+        </div>
+      </div>
+
+      <!-- Вопрос 9 -->
+      <div class="quiz-card" id="q9">
+        <div class="quiz-question">9. С помощью какого реактива можно отличить ацетилен от этилена?</div>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer('q9', 0, false)">А) Бромная вода</button>
+          <button class="quiz-btn" onclick="checkAnswer('q9', 1, false)">Б) Раствор KMnO<sub>4</sub></button>
+          <button class="quiz-btn" onclick="checkAnswer('q9', 2, true)">В) Аммиачный раствор [Ag(NH<sub>3</sub>)<sub>2</sub>]OH</button>
+          <button class="quiz-btn" onclick="checkAnswer('q9', 3, false)">Г) Хлороводород HCl</button>
+        </div>
+        <div class="quiz-explanation" id="q9-exp">
+          <strong>Правильно: В!</strong> Бромную воду и KMnO<sub>4</sub> обесцвечивают и этилен, и ацетилен. Но осадок с аммиачным раствором оксида серебра дает ТОЛЬКО ацетилен (за счет слабокислых свойств атомов H при тройной связи)!
+        </div>
+      </div>
+
+      <!-- Вопрос 10 -->
+      <div class="quiz-card" id="q10">
+        <div class="quiz-question">10. Какое вещество образуется при тримеризации ацетилена над активированным углем при 500°C?</div>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer('q10', 0, false)">А) Гексан</button>
+          <button class="quiz-btn" onclick="checkAnswer('q10', 1, false)">Б) Винилацетилен</button>
+          <button class="quiz-btn" onclick="checkAnswer('q10', 2, true)">В) Бензол</button>
+          <button class="quiz-btn" onclick="checkAnswer('q10', 3, false)">Г) Циклогексан</button>
+        </div>
+        <div class="quiz-explanation" id="q10-exp">
+          <strong>Правильно: В!</strong> Реакция Зелинского: 3 C<sub>2</sub>H<sub>2</sub> &rarr; C<sub>6</sub>H<sub>6</sub> (бензол). Из ацетилена замыкается шестичленное ароматическое бензольное кольцо!
+        </div>
+      </div>
+
+      <!-- Итог квиза -->
+      <div class="quiz-score-box" id="quizScoreBox">
+        <h3>Ваш результат: <span id="scoreVal" style="color:var(--accent);">0 / 10</span></h3>
+        <p id="gradeText" style="margin-top:8px; font-weight:700; font-size:1.1rem; color:var(--text-muted);">
+          Ответьте на вопросы выше, чтобы узнать оценку!
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // Переключение темы (светлая/тёмная)
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      if (current === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    }
+
+    // Живой поиск по содержимому
+    function filterContent() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const blocks = document.querySelectorAll('.reaction-block, .trap-card, .info-pane, .chain-box, .simple-expl-box');
+      
+      blocks.forEach(block => {
+        if (!q) {
+          block.style.display = '';
+          return;
+        }
+        const text = block.textContent.toLowerCase();
+        if (text.includes(q)) {
+          block.style.display = '';
+        } else {
+          block.style.display = 'none';
+        }
+      });
+    }
+
+    // Переворот флеш-карточки
+    function flipCard(card) {
+      card.classList.toggle('flipped');
+    }
+
+    // Показ решения цепочки
+    function toggleChain(id) {
+      const el = document.getElementById(id);
+      if (el.style.display === 'block') {
+        el.style.display = 'none';
+      } else {
+        el.style.display = 'block';
+      }
+    }
+
+    // Подсчет баллов в квизе
+    let totalAnswered = 0;
+    let correctCount = 0;
+
+    function checkAnswer(questionId, optionIndex, isCorrect) {
+      const container = document.getElementById(questionId);
+      const buttons = container.querySelectorAll('.quiz-btn');
+      const exp = document.getElementById(questionId + '-exp');
+
+      // Если уже ответили, не засчитывать повторно
+      if (buttons[0].disabled) return;
+
+      totalAnswered++;
+      if (isCorrect) correctCount++;
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === optionIndex) {
+          if (isCorrect) {
+            btn.classList.add('correct');
+          } else {
+            btn.classList.add('wrong');
+          }
+        }
+      });
+
+      // Показать правильную кнопку, если ошиблись
+      if (!isCorrect) {
+        buttons.forEach(btn => {
+          if (btn.getAttribute('onclick').includes('true')) {
+            btn.classList.add('correct');
+          }
+        });
+      }
+
+      exp.style.display = 'block';
+
+      // Обновить табло
+      document.getElementById('scoreVal').innerText = `${correctCount} / 10`;
+      
+      const gradeText = document.getElementById('gradeText');
+      if (totalAnswered === 10) {
+        if (correctCount >= 9) {
+          gradeText.innerHTML = "🏆 Отметка: <span style='color:#34d399;'>ОТЛИЧНО (5)! Вы полностью готовы к К/Р!</span>";
+        } else if (correctCount >= 7) {
+          gradeText.innerHTML = "👍 Отметка: <span style='color:#38bdf8;'>ХОРОШО (4)! Повторите разделы, где были ошибки.</span>";
+        } else if (correctCount >= 5) {
+          gradeText.innerHTML = "⚠️ Отметка: <span style='color:#fbbf24;'>УДОВЛЕТВОРИТЕЛЬНО (3). Обязательно перечитайте блок 'Ловушки'!</span>";
+        } else {
+          gradeText.innerHTML = "❌ Отметка: <span style='color:#f87171;'>НУЖНО ПОВТОРИТЬ (2). Пройдитесь по карточкам и шпаргалке еще раз!</span>";
+        }
+      } else {
+        gradeText.innerText = `Отвечено вопросов: ${totalAnswered} из 10...`;
+      }
+    }
+  </script>
+</body>
+</html>
